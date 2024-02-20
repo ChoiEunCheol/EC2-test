@@ -7,10 +7,9 @@ const path = require('path')
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 // 기본 경로로 접근했을 때 응답
-app.get('/', (req, res) => {
-  res.send('Express 서버가 실행중입니다!');
-});
-
+app.get('/test', (req, res) => {
+    res.json('ㅎㅇ');
+  });
 // 서버 시작
 app.listen(port, () => {
   console.log(`서버가 http://localhost:${port} 에서 실행중입니다!`);
