@@ -8,7 +8,7 @@ function App() {
     // 서버로부터 데이터를 요청하고 응답을 받는 함수
     const fetchData = async () => {
       try {
-        const response = await fetch('ec2-3-34-194-128.ap-northeast-2.compute.amazonaws.com/test');
+        const response = await fetch('/test');
         const text = await response.text(); // 텍스트 응답을 받음
         setServerResponse(text); // 응답 데이터를 상태에 저장
       } catch (error) {
