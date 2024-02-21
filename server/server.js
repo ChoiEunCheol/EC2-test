@@ -8,13 +8,13 @@ const cors = require('cors');
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.use(cors({
-    origin: 'https://main.d14d4gt5x7f0nb.amplifyapp.com/' // 클라이언트 앱의 Amplify 호스팅 URL
+    origin: 'http://localhost' // 클라이언트 앱의 Amplify 호스팅 URL
   }));
 
 // 기본 경로로 접근했을 때 응답
 app.get('/test', (req, res) => {
-    res.json('ㅎㅇ');
-  });
+  res.json({ message: 'ㅎㅇ' });
+});
 // 서버 시작
 app.listen(port, () => {
   console.log(`서버가 http://localhost:${port} 에서 실행중입니다!`);

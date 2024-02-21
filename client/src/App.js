@@ -8,12 +8,13 @@ function App() {
     // 서버로부터 데이터를 요청하고 응답을 받는 함수
     const fetchData = async () => {
       try {
-        const response = await fetch('http://ec2-43-201-107-172.ap-northeast-2.compute.amazonaws.com:3030/test');
-        const text = await response.text(); // 텍스트 응답을 받음
-        setServerResponse(text); // 응답 데이터를 상태에 저장
+        const response = await fetch('/test');
+        const data = await response.json(); // JSON 응답 파싱
+        console.log(data)
+        setServerResponse(data.message); // 'ㅎㅇ' 메시지 접근
       } catch (error) {
         console.error('Error fetching data:', error);
-        setServerResponse('Failed to fetch data'); // 오류 처리
+        setServerResponse('Failed to fetch data');
       }
     };
 
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>{serverResponse}</p> {/* 서버 응답 출력 */}
+      <p>ㅎㅇㅎㅇㅎㅇ{serverResponse}</p> {/* 서버 응답 출력 */}
     </div>
   );
 }
